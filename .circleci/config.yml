@@ -1,8 +1,7 @@
 version: 2.1
 orbs:
-description: >
-  Install GCP CLI, if needed, and configure. Build and push image to repository.
-string: <<parameters.string>>
+  description:
+    string: <<parameters.string>>
 
 parameters:
   string:
@@ -132,10 +131,9 @@ steps:
       tag: <<parameters.tag>> 
       digest-path: <<parameters.digest-path>> 
 
-workflows:
-  workflow:
-    jobs:
-      - gcr-auth
-      - build-image
-      - push-image
-© 2020 Git
+# workflows:
+#   workflow:
+#     jobs:
+#       - gcr-auth
+#       - build-image
+#       - push-image
