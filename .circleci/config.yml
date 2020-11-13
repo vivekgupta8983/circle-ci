@@ -131,9 +131,11 @@ steps:
       tag: <<parameters.tag>> 
       digest-path: <<parameters.digest-path>> 
 
-# workflows:
-#   workflow:
-#     jobs:
-#       - gcr-auth
-#       - build-image
-#       - push-image
+workflows:
+  version: 2
+  build-image:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
